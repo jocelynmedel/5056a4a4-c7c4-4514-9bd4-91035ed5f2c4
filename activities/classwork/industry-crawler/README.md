@@ -1,3 +1,4 @@
+
 # Industry Crawler
 
 This application contains a web-crawler that downloads industry information from an [official/public government page](https://www.osha.gov/pls/imis/sic_manual.html). The implementation relies on nested-structures (tree-like data), string operations, and recursive search using python.
