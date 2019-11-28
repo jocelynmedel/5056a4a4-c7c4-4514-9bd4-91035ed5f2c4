@@ -46,7 +46,7 @@ To quit the console:
 
 You can run the application with SBT or compile and submit a spark-job.
 
-**Run with SBT**
+**Run with SBT** 
 
 Use SBT to run the Spark Application with: `sbt run`
 
