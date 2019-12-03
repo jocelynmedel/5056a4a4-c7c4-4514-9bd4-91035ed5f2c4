@@ -47,17 +47,32 @@ case object Problem5 extends Problem {
     }
 
     // A) Implement the length method
-    def length: Int = ???
+    def length: Int = this match {
+      case Final => 0
+      case Item(head, tail) => tail.length + 1
+    }
 
     // B) Implement the sum method
-    def sum: Int = ???
+    def sum: Int = this match {
+      case Final => 0
+      case Item(head, tail) => head + tail.sum
+    }
 
     // C) Implement a generalization of the above methods and call it fold.
-    // def fold(end: Int, f: ???): Int = ???
+    def fold(end: Int, f: (Int, Int) => Int):
+    Int = this match {
+      case Final => end
+      case Item(head, tail) => f(head, tail.fold(end, f))
+
+    }
 
 
     // D) Implement a generic fold (generalization over the fold on C).
-    // def genericFold[B](end: ???, f: ???): B = ???
+    def genericFold[B](end: B, f: (Int, B) => B):
+    B = this match {
+      case Final => end
+      case Item(head, tail) => f(head, tail.genericFold(end, f))
+    }
 
   }
 
